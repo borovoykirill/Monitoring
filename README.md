@@ -1,2 +1,2 @@
 # DevOps Lab
-#### Kirill Baravoy Private:
+#### Kirill Baravoy
