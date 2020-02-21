@@ -1,3 +1,3 @@
 # DevOps Lab
-LDAP - Home Task
-Kirill Baravoy Report:
+## LDAP - Home Task <br>
+### Kirill Baravoy Report:
