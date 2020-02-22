@@ -8,9 +8,9 @@
 [Script to install the client part of OpenLDAP](https://github.com/MNT-Lab/google-cloud-module/blob/kbaravoy/Day%205/main.tf "Client script") <br>
 
 ###### OpenLDAP
-![alt text](https://github.com/borovoykirill/DevOps-Lab/tree/LDAP/img/status-slapd.png "Service status")
-![alt text](https://github.com/borovoykirill/DevOps-Lab/tree/LDAP/img/ldapadmin.png "LDAP web-console")
+![alt text]((https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/status-slapd.png "Service status")
+![alt text]((https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/img/ldapadmin.png "LDAP web-console")
 
 
 ###### Attempt to connection to client server
-![alt text](https://github.com/borovoykirill/DevOps-Lab/tree/LDAP/img/connect_via_epamer.png "LDAP web-console")
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/connect_via_epamer.png "LDAP web-console")
