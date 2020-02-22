@@ -29,4 +29,4 @@ variable "subnet-1-name" {}
 
 variable "network_name" {}
 
-variable "google_compute_firewall_ssh_name" {}
+variable "google_compute_firewall_rules" {}

@@ -4,7 +4,7 @@ resource "google_compute_instance" "client-ldap" {
   machine_type            = "${var.instance_typece}"
   zone                    = "us-central1-a"
   tags                    = ["client"]
-  metadata_startup_script = "${file("clt-script.sh")}"
+  metadata_startup_script = "${file("./provision/client-setup.sh")}"
 
   boot_disk {
     initialize_params {
@@ -26,8 +26,4 @@ resource "google_compute_instance" "client-ldap" {
     osfamily          = "centos7"
     wayofinstallation = "terraform"
   }
-
-  metadata_startup_script = <<EOF
-sudo yum -y update
-EOF
 }
