@@ -8,7 +8,8 @@
 [Script to install the client part of OpenLDAP](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/provision/client-setup.sh "Client script") <br>
 
 ###### OpenLDAP
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/status-slapd.png "Service status") <br>
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/status-slapd.png "Service status")
+<br>
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/ldapadmin.png "LDAP web-console")
 
 
