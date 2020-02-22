@@ -9,6 +9,7 @@
 *.json
 *.tfstate.backup
 *.tfstate
+.terraform
 
 # Vagrant stuff
 acceptance_config.yml
