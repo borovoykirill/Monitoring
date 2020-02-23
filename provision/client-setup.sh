@@ -8,7 +8,6 @@ sleep 120s
 
 # Add client's VM in LDAP
 sudo authconfig --enableldap --enableldapauth --ldapserver=10.10.1.11 --ldapbasedn="dc=epam,dc=devopslab,dc=com" --enablemkhomedir --update
-​
 sudo sed -i ' s;PasswordAuthentication no;PasswordAuthentication yes;' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 sudo systemctl restart nslcd
