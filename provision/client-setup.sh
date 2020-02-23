@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Install LDAP client
-sudo yum install -y openldap-clients nss-pam-ldapd
+sudo yum update -y
+sudo yum -y install openldap-clients nss-pam-ldapd
 
 # Timeout until the server is installed
 sleep 99s
