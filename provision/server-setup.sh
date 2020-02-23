@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install LDAP server, create passwd for admin and user
-sudo yum update -y
+sudo yum -y update
 sudo yum -y install epel-release
 sudo yum -y install openldap openldap-servers openldap-clients
 
