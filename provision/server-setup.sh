@@ -2,7 +2,8 @@
 
 # Install LDAP server, create passwd for admin and user
 sudo yum update -y
-sudo yum -y install openldap openldap-servers openldap-servers-sql openldap-devel compat-openldap openldap-clients
+sudo yum -y install epel-release
+sudo yum -y install openldap openldap-servers openldap-clients
 
 sudo systemctl enable slapd
 sudo systemctl start slapd
@@ -14,7 +15,7 @@ sudo slappasswd -h {SSHA} -s qazWSX321 > usrldappasswd.txt
 USRPASS=$(cat "usrldappasswd.txt")
 
 # Configuring LDAP Server
-cat > ldaprootpasswd.ldif <<EOF
+cat <<EOF > ldaprootpasswd.ldif
 dn: olcDatabase={0}config,cn=config
 changetype: modify
 add: olcRootPW
@@ -31,7 +32,7 @@ sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
 sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif
 sudo ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
 
-cat > ldapdomain.ldif <<EOF
+cat <<EOF > ldapdomain.ldif
 dn: olcDatabase={1}monitor,cn=config
 changetype: modify
 replace: olcAccess
@@ -64,8 +65,7 @@ EOF
 
 sudo ldapadd -Y EXTERNAL -H ldapi:/// -f ldapdomain.ldif
 
-
-cat > ldapdomain.ldif <<EOF
+cat <<EOF > ldapdomain.ldif
 dn: dc=epam,dc=devopslab,dc=com
 dc: epam
 objectClass: top
@@ -89,8 +89,7 @@ EOF
 
 sudo ldapadd -x -w qwerty123 -D "cn=ldapadm,dc=epam,dc=devopslab,dc=com" -f ldapdomain.ldif
 
-
-cat > group.ldif <<EOF
+cat <<EOF > group.ldif
 dn: cn=ldapadm,ou=Group,dc=epam,dc=devopslab,dc=com
 objectClass: top
 objectClass: posixGroup
@@ -99,7 +98,7 @@ EOF
 
 sudo ldapadd -x -w qwerty123 -D "cn=ldapadm,dc=epam,dc=devopslab,dc=com" -f group.ldif
 
-sudo cat > ldapuser.ldif <<EOF
+cat <<EOF > ldapuser.ldif
 dn: uid=user,ou=People,dc=epam,dc=devopslab,dc=com
 objectClass: top
 objectClass: account
@@ -120,6 +119,7 @@ EOF
 
 ldapadd -x -D "cn=ldapadm,dc=epam,dc=devopslab,dc=com" -w qwerty123 -f ldapuser.ldif
 
+# Install php_ldap_admin
 sudo yum install -y phpldapadmin
 
 sudo sed -i '397 s;// $servers;$servers;' /etc/phpldapadmin/config.php
