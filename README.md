@@ -14,7 +14,7 @@
 ##### Kibana status - Undeploy application:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/undeploy.png "Undeploy application")
 
-##### Systemctl status kibana:
+##### Systemctl status Kibana:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/kibana-status.png "Service kibana status")
 
 ##### Logstash log:
