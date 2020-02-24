@@ -124,7 +124,7 @@ sudo yum install -y phpldapadmin
 
 sudo sed -i '397 s;// $servers;$servers;' /etc/phpldapadmin/config.php
 sudo sed -i '398 s;$servers->setValue;// $servers->setValue;' /etc/phpldapadmin/config.php
-sudo sed -i ' s;Require local;Require all granted;' /etc/httpd/conf.d/phpldapadmin.conf
-sudo sed -i ' s;Allow from 127.0.0.1;Allow from 0.0.0.0;' /etc/httpd/conf.d/phpldapadmin.conf
+sudo sed -i 's;Require local;Require all granted;' /etc/httpd/conf.d/phpldapadmin.conf
+sudo sed -i 's;Allow from 127.0.0.1;Allow from 0.0.0.0;' /etc/httpd/conf.d/phpldapadmin.conf
 
 sudo systemctl restart httpd
