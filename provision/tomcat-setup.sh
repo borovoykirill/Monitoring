@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 60s
+sleep 120s
 
 sudo yum update -y
 sudo yum -y install wget
