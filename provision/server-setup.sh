@@ -7,8 +7,6 @@ sudo yum update -y
 # Install Kibana
 sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
-touch /tmp/kibana.repo
-
 cat << EOF > /tmp/kibana.repo
 [kibana-7.x]
 name=Kibana repository for 7.x packages
@@ -52,7 +50,10 @@ sudo yum -y install --enablerepo=elasticsearch elasticsearch
 sudo systemctl start elasticsearch
 sudo systemctl enable elasticsearch
 
-sudo bash -c "echo -e \"network.host: 127.0.0.1\nhttp.host: 0.0.0.0\naction.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*
-\" >> /etc/elasticsearch/elasticsearch.yml"
+sudo cat << EOF >> /etc/elasticsearch/elasticsearch.yml
+network.host: 127.0.0.1
+http.host: 0.0.0.0
+action.auto_create_index: .monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*
+EOF
 
 sudo systemctl restart elasticsearch
