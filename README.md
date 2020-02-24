@@ -17,8 +17,5 @@
 ##### Systemctl status Kibana:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/kibana-status.png "Service kibana status")
 
-##### Kibana - health:
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/health.png "Kibana health")
-
 ##### Logstash log:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/logstash-log.png "Logstash")
