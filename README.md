@@ -14,7 +14,7 @@
 ##### Kibana status - Undeploy application:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/undeploy.png "Undeploy application")
 
-##### Kiabna health:
+##### Kibana health:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/health.png "Health status")
 
 ##### Systemctl status Kibana:
