@@ -4,14 +4,14 @@
 ##### Home task: ELK Introduction
 <br>
 
-[Script to install Kibana and Elastic](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/provision/server-setup.sh "Server script") <br>
-[Script to install Tomcat and Logstash](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/provision/client-setup.sh "Client script") <br>
+[Script to install Kibana and Elastic](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/provision/server-setup.sh "Setup Kibana and Elastic") <br>
+[Script to install Tomcat and Logstash](hhttps://github.com/borovoykirill/DevOps-Lab/blob/ELK/provision/tomcat-setup.sh "Setup Tomcat and Logstash") <br>
 
-##### - OpenLDAP status:
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/status-slapd.png "Service status")
+##### Kibana status - Deploy application:
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/logstash.png "Service status")
 <br>
-##### - OpenLDAP WEB console:
+##### Kibana status - Undeploy application:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/ldapadmin.png "LDAP web-console")
 
-##### - Attempt to connection to client server:
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/connect_via_epamer.png "LDAP web-console")
+##### systemctl status kibana:
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/kibana-status.png "Service kibana status")
