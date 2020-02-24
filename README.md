@@ -12,7 +12,7 @@
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/deploy.png "Deploy application")
 <br>
 ##### Kibana status - Undeploy application:
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/Undeploy.png "Undeploy application")
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/undeploy.png "Undeploy application")
 
 ##### Systemctl status kibana:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/kibana-status.png "Service kibana status")
