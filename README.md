@@ -5,6 +5,7 @@
 <br>
 
 [Script to install Kibana and Elastic](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/provision/server-setup.sh "Setup Kibana and Elastic") <br>
+<br>
 [Script to install Tomcat and Logstash](hhttps://github.com/borovoykirill/DevOps-Lab/blob/ELK/provision/tomcat-setup.sh "Setup Tomcat and Logstash") <br>
 
 ##### Kibana status - Deploy application:
