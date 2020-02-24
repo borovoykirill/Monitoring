@@ -1,11 +1,11 @@
 # variables for instances module
 
 variable "name" {
-  default = "server-ldap"
+  default = "server"
 }
 
 variable "name2" {
-  default = "client-ldap"
+  default = "tomcat"
 }
 
 variable "instance_count" {
@@ -21,7 +21,7 @@ variable "image_source" {
 }
 
 variable "instance_typece" {
-  default = "g1-small"
+  default = "n1-standard-1"
 }
 
 #For networking via output:

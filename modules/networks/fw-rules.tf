@@ -1,14 +1,13 @@
-# Create FW rules - accept external SSH connection to client-host via tags=client
+# Create FW rules - accept all
 resource "google_compute_firewall" "external" {
   name    = "external"
   network = "${google_compute_network.kbaravoy-vpc.self_link}"
 
   allow {
-    protocol = "tcp"
-    ports    = ["22", "80", "389", "387"]
+    protocol = "all"
   }
 
-  target_tags = ["client", "server"]
+  target_tags = ["vm"]
 }
 
 # Output for main.tf

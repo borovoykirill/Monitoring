@@ -1,9 +1,10 @@
-# Create server-LDAP host
-resource "google_compute_instance" "server-ldap" {
-  name                    = "${var.name}"
-  machine_type            = "${var.instance_typece}"
-  zone                    = "us-central1-a"
-  tags                    = ["server"]
+# Create server host for monitoring
+resource "google_compute_instance" "server" {
+  name         = "${var.name}"
+  machine_type = "${var.instance_typece}"
+  zone         = "us-central1-a"
+  tags         = ["vm"]
+
   metadata_startup_script = "${file("./provision/server-setup.sh")}"
 
   boot_disk {
@@ -22,7 +23,7 @@ resource "google_compute_instance" "server-ldap" {
   }
 
   labels = {
-    servertype        = "serverldap"
+    servertype        = "server"
     osfamily          = "centos7"
     wayofinstallation = "terraform"
   }

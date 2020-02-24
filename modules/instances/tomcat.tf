@@ -1,10 +1,11 @@
-# Create server-LDAP client
-resource "google_compute_instance" "client-ldap" {
-  name                    = "${var.name2}"
-  machine_type            = "${var.instance_typece}"
-  zone                    = "us-central1-a"
-  tags                    = ["client"]
-  metadata_startup_script = "${file("./provision/client-setup.sh")}"
+# Create Tomcat host
+resource "google_compute_instance" "tomcat" {
+  name         = "${var.name2}"
+  machine_type = "${var.instance_typece}"
+  zone         = "us-central1-a"
+  tags         = ["vm"]
+
+  metadata_startup_script = "${file("./provision/tomcat-setup.sh")}"
 
   boot_disk {
     initialize_params {
@@ -22,7 +23,7 @@ resource "google_compute_instance" "client-ldap" {
   }
 
   labels = {
-    servertype        = "clientldap"
+    servertype        = "tomcat"
     osfamily          = "centos7"
     wayofinstallation = "terraform"
   }

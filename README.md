@@ -1,11 +1,11 @@
 # DevOps Lab
 ### Kirill Baravoy
 
-##### Home task: LDAP
+##### Home task: ELK Introduction
 <br>
 
-[Script to install the server part of OpenLDAP](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/provision/server-setup.sh "Server script") <br>
-[Script to install the client part of OpenLDAP](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/provision/client-setup.sh "Client script") <br>
+[Script to install Kibana and Elastic](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/provision/server-setup.sh "Server script") <br>
+[Script to install Tomcat and Logstash](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/provision/client-setup.sh "Client script") <br>
 
 ##### - OpenLDAP status:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/LDAP/img/status-slapd.png "Service status")
