@@ -47,6 +47,7 @@ ZBX_SERVER_PORT='$ZBX_SERVER_PORT'
 ZBX_SERVER_NAME='$ZBX_SERVER_NAME'
 IMAGE_FORMAT_DEFAULT='$IMAGE_FORMAT_DEFAULT'
 
+# This file help us to skip pre-installation
 cat <<EOF>/etc/zabbix/web/zabbix.conf.php
 <?php
 // Zabbix GUI configuration file
