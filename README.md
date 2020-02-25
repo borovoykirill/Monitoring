@@ -17,5 +17,5 @@
 ##### Recieved email alert:
 ![alt text](hhttps://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/recieve_email.png "Recieve email")
 
-##### Systemctl status Kibana:
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/kibana-status.png "Service kibana status")
+##### Latest data:
+![alt text](hhttps://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/latest_data.png "Recieve email")
