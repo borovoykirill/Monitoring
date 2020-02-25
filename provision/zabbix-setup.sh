@@ -75,6 +75,8 @@ sudo systemctl restart httpd
 
 # Launch Zabbix
 sudo systemctl restart zabbix-server
+sudo systemctl start zabbix-agent
+sudo systemctl enable zabbix-agent
 
 # Disable SeLinux after launch zabbix, after that you have to reboot Gest OS
 sudo sed -i 's/^SELINUX=.*/SELINUX=disable/g' /etc/selinux/config

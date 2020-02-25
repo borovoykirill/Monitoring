@@ -1,14 +1,14 @@
 # DevOps Lab
 ### Kirill Baravoy
 
-##### Home task: ELK Introduction
+##### Home task: Zabbix
 <br>
 
-[Script to install Kibana and Elastic](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/provision/server-setup.sh "Setup Kibana and Elastic") <br>
+[Script to install and configure Zabbix server](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/provision/zabbix-setup.sh "Install and configure Zabbix server") <br>
 <br>
-[Script to install Tomcat and Logstash](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/provision/tomcat-setup.sh "Setup Tomcat and Logstash") <br>
+[Script to install and configure Zabbix agent](hhttps://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/provision/host01-setup.sh "Install anf configure Zabbix agent") <br>
 
-##### Kibana status - Deploy application:
+##### Zabbix hosts 
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/ELK/img/deploy.png "Deploy application")
 <br>
 ##### Kibana status - Undeploy application:
