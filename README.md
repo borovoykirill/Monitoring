@@ -21,4 +21,4 @@
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/latest_data.png "Recieve email")
 <br>
 ##### Latest data:
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/skip_pre-install.png "Recieve email" "Skip pre-install")
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/skip_pre-install.png "Skip pre-install")
