@@ -1,11 +1,11 @@
-# Create Tomcat host
-resource "google_compute_instance" "tomcat" {
-  name         = "${var.name2}"
+# Create server host for monitoring
+resource "google_compute_instance" "zabbix" {
+  name         = "${var.name}"
   machine_type = "${var.instance_typece}"
   zone         = "us-central1-a"
   tags         = ["vm"]
 
-  metadata_startup_script = "${file("./provision/tomcat-setup.sh")}"
+  metadata_startup_script = "${file("./provision/zabbix-setup.sh")}"
 
   boot_disk {
     initialize_params {
@@ -18,12 +18,12 @@ resource "google_compute_instance" "tomcat" {
   network_interface {
     network       = "${var.network_name}"
     subnetwork    = "${var.subnet-1-name}"
-    network_ip    = "10.10.1.10"
+    network_ip    = "10.10.1.11"
     access_config = {}
   }
 
   labels = {
-    servertype        = "tomcat"
+    servertype        = "server"
     osfamily          = "centos7"
     wayofinstallation = "terraform"
   }

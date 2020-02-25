@@ -1,6 +1,6 @@
 # Create FW rules - accept all
-resource "google_compute_firewall" "external" {
-  name    = "external"
+resource "google_compute_firewall" "all" {
+  name    = "all"
   network = "${google_compute_network.kbaravoy-vpc.self_link}"
 
   allow {
@@ -12,5 +12,5 @@ resource "google_compute_firewall" "external" {
 
 # Output for main.tf
 output "google_compute_firewall_rules" {
-  value = "${google_compute_firewall.external.self_link}"
+  value = "${google_compute_firewall.all.self_link}"
 }

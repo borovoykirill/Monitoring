@@ -1,11 +1,11 @@
 # variables for instances module
 
 variable "name" {
-  default = "server"
+  default = "zabbix"
 }
 
 variable "name2" {
-  default = "tomcat"
+  default = "host01"
 }
 
 variable "instance_count" {
