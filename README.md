@@ -1,18 +1,13 @@
 # DevOps Lab
 ### Kirill Baravoy
 
-##### Home task: Zabbix
+##### Zabbix_WEB_hometask
 <br>
-
-[Script to install and configure Zabbix server](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/provision/zabbix-setup.sh "Install and configure Zabbix server") <br>
+##### Response code 200 OK
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/zabbix_hosts.png "Response 200")
 <br>
-[Script to install and configure Zabbix agent](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/provision/host01-setup.sh "Install anf configure Zabbix agent") <br>
-
-##### Zabbix hosts
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/zabbix_hosts.png "Zabbix hosts")
-<br>
-##### Zabbix send email alert:
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/zabbix_email.png "Zabbix send email")
+##### Monitoring WEB site with Zabbix:
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/zabbix_email.png "Monitoring WEB")
 
 ##### Recieved email alert:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/recieve_email.png "Recieve email")
