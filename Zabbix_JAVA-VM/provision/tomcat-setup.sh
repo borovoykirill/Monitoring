@@ -56,7 +56,7 @@ Group=tomcat
 WantedBy=multi-user.target
 END
 
-# Configure JMX for monitoring via Zabbix
+# Configure JMX for monitoring with Zabbix
 sudo cd /opt/tomcat/lib/
 sudo wget http://ftp.byfly.by/pub/apache.org/tomcat/tomcat-8/v8.5.51/bin/extras/catalina-jmx-remote.jar
 
