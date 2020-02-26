@@ -4,10 +4,10 @@
 ##### Zabbix_WEB_hometask
 <br>
 ##### Response code 200 OK
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/zabbix_hosts.png "Response 200")
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix-day2/img/code200-ok.png "Response 200")
 <br>
 ##### Monitoring WEB site with Zabbix:
-![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/zabbix_email.png "Monitoring WEB")
+![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix-day2/img/web-response.png "Monitoring WEB host")
 
 ##### Recieved email alert:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix/img/recieve_email.png "Recieve email")
