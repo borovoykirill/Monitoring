@@ -11,7 +11,7 @@
 
 #### Home task: Monitoring JAVA VM
 
-##### Create 2 host for monitoring. Tomcat via JMX and JAVA via JMX.
+##### Create 2 host for monitoring. Tomcat via JMX and JAVA via JMX:
 ![alt text](https://github.com/borovoykirill/DevOps-Lab/blob/Zabbix-day2/img/jmxtomcat.png "Tomcat and JAVA via JMX")
 
 ##### Tomcat latest data:
