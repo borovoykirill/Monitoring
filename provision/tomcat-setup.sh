@@ -16,7 +16,7 @@ sudo systemctl enable zabbix-agent
 # Configure Zabbix agent
 sudo sed -i 's@Server=127.0.0.1@Server=10.10.1.11@' /etc/zabbix/zabbix_agentd.conf
 sudo sed -i 's@ServerActive=127.0.0.1@ServerActive=10.10.1.11@' /etc/zabbix/zabbix_agentd.conf
-sudo sed -i 's@Hostname=Zabbix server@Hostname=host01@' /etc/zabbix/zabbix_agentd.conf
+sudo sed -i 's@Hostname=Zabbix server@Hostname=tomcat01@' /etc/zabbix/zabbix_agentd.conf
 
 sudo systemctl restart zabbix-agent
 
@@ -79,3 +79,26 @@ sudo wget -P /opt/tomcat/webapps/ https://community.jboss.org/servlet/JiveServle
 sudo sed -i '/<Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" \/>/a <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="8097" rmiServerPortPlatform="8098" \/>' /opt/tomcat/conf/server.xml
 
 sudo systemctl restart tomcat
+
+# Autoregister host, use Linux template.
+sleep 200s
+
+# Zabbix server IP = 10.10.1.11
+# Host ip = 10.10.1.10
+# Name of new host = tomcat01
+# URL zabbix server = http://10.10.1.11/zabbix/api_jsonrpc.php
+
+# Take Token id
+user_login=`curl -sS -i -X POST -H 'Content-Type: application/json-rpc' -d "{\"params\": {\"password\": \"zabbix\", \"user\": \"Admin\"}, \"jsonrpc\":\"2.0\", \"method\": \"user.login\", \"id\": 0}" "http://10.10.1.11/zabbix/api_jsonrpc.php"`
+TOKEN=`echo $user_login | sed -n 's/.*result":"\(.*\)",.*/\1/p'`
+
+# Take Group id
+group_id=`curl -i -X POST -H 'Content-Type: application/json-rpc' -d "{\"jsonrpc\":\"2.0\",\"method\":\"hostgroup.get\",\"params\":{\"output\":\"extend\",\"filter\":{\"name\":[\"Linux servers\"]}},\"auth\":\"$TOKEN\",\"id\":0}" "http://10.10.1.11/zabbix/api_jsonrpc.php"`
+HOSTGROUPID=`echo $group_id | cut -d '"' -f 10 `
+
+# Take Tempalte ID
+template_id=`curl -i -X POST -H 'Content-Type: application/json-rpc' -d "{\"jsonrpc\":\"2.0\",\"method\":\"template.get\",\"params\":{\"output\":\"extend\",\"filter\":{\"host\":[\"Template OS Linux by Zabbix agent\"]}},\"auth\":\"$TOKEN\",\"id\":0}" "http://10.10.1.11/zabbix/api_jsonrpc.php"`
+TEMPLATEID=`echo $template_id | cut -d '"' -f 130 `
+
+# Create new host: tomcat01
+outs=`curl -i -X POST -H 'Content-Type: application/json-rpc' -d "{\"jsonrpc\":\"2.0\",\"method\":\"host.create\",\"params\":{\"host\":\"tomcat01\",\"interfaces\":[{\"type\":1,\"main\":1,\"useip\":1,\"ip\":\"10.10.1.10\",\"dns\":\"\",\"port\":\"10050\"}],\"groups\":[{\"groupid\":\"$HOSTGROUPID\"}],\"templates\":[{\"templateid\":\"$TEMPLATEID\"}]},\"auth\":\"$TOKEN\",\"id\":1}" "http://10.10.1.11/zabbix/api_jsonrpc.php"`

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 30s
+sleep 15s
 
 sudo yum -y update
 
