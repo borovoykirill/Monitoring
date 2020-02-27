@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 99s
+sleep 30s
 
 sudo yum update -y
 sudo yum -y install wget
@@ -20,7 +20,7 @@ sudo sed -i 's@Hostname=Zabbix server@Hostname=host01@' /etc/zabbix/zabbix_agent
 
 sudo systemctl restart zabbix-agent
 
-# Install tomcat
+# Install and configure Tomcat
 sudo yum -y install java-1.8.0-openjdk-devel
 
 sudo groupadd tomcat
@@ -56,12 +56,7 @@ Group=tomcat
 WantedBy=multi-user.target
 END
 
-# Configure JMX for monitoring via Zabbix
-sudo cd /opt/tomcat/lib/
-sudo wget http://ftp.byfly.by/pub/apache.org/tomcat/tomcat-8/v8.5.51/bin/extras/catalina-jmx-remote.jar
-
 sudo sed -i 's+<Context>+<Context allowCasualMultipartParsing="true">+g' /opt/tomcat/conf/context.xml
-sudo sed -i '/<Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" \/>/a <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="8097" rmiServerPortPlatform="8098" \/>' /opt/tomcat/conf/server.xml
 
 sudo cat << EOF > /opt/tomcat/bin/setenv.sh
 export JAVA_OPTS="-Dcom.sun.management.jmxremote=true \
@@ -75,7 +70,12 @@ EOF
 sudo systemctl enable tomcat
 sudo systemctl start tomcat
 
-sudo cd /opt/tomcat/webapps
-sudo wget https://community.jboss.org/servlet/JiveServlet/download/588259-27006/clusterjsp.war
+# Configure JMX for monitoring via Zabbix
+sudo wget -P /opt/tomcat/lib/ http://ftp.byfly.by/pub/apache.org/tomcat/tomcat-8/v8.5.51/bin/extras/catalina-jmx-remote.jar
+
+# Deploy application
+sudo wget -P /opt/tomcat/webapps/ https://community.jboss.org/servlet/JiveServlet/download/588259-27006/clusterjsp.war
+
+sudo sed -i '/<Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" \/>/a <Listener className="org.apache.catalina.mbeans.JmxRemoteLifecycleListener" rmiRegistryPortPlatform="8097" rmiServerPortPlatform="8098" \/>' /opt/tomcat/conf/server.xml
 
 sudo systemctl restart tomcat
